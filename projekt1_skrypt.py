@@ -163,3 +163,19 @@ if __name__ == "__main__":
         plik = argumenty[argumenty.index('-plik') + 1]
     except IndexError:
         raise Exception('Nie podano wartoci dla wszytkich wymaganych flag')
+        
+        
+        # Sprawdzanie wartosci podanej elispoidy 
+    try:
+        elipsoida = elipsoidy[elip]
+        transformator = Transfromacje(elipsoida)
+    except KeyError:
+        raise Exception('Podano nieobslugiwany typ eliposidy')
+    
+    # Sprawdzenie dostepnosci podanych transformacji
+    transformacje = ['XYZ2BLH', 'BLH2XYZ', 'PL2000', 'PL1992', 'XYZ2NEUP']
+    
+    if trans not in transformacje:
+        raise Exception('Skrypt nie obsluguje podanej transformacji')
+        
+        
