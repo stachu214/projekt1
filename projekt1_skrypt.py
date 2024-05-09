@@ -152,4 +152,14 @@ if __name__ == "__main__":
 
     argumenty = sys.argv[1:]
     
+    # Sprawdzenie czy wszystkie flagi zostały podane
+    if '-plik' not in argumenty or '-elip' not in argumenty or '-trans' not in argumenty:
+        raise Exception('Nie podano wszystkich wymaganaych argumentów (-plik, -elip, -trans)')
     
+    # Sprawdzenie czy dla wszystkich flag zostały dodane wartosci
+    try:
+        elip = argumenty[argumenty.index('-elip') + 1]
+        trans = argumenty[argumenty.index('-trans') + 1]
+        plik = argumenty[argumenty.index('-plik') + 1]
+    except IndexError:
+        raise Exception('Nie podano wartoci dla wszytkich wymaganych flag')
