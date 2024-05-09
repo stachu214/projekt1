@@ -132,3 +132,24 @@ class Transfromacje:
         X_rneu = R_neu.T@X_sr
             
         return f'{str(X_rneu.T)} \n'
+
+
+# funkcja rozpoczynająca program 
+if __name__ == "__main__":
+
+    elipsoidy = {
+        'WGS84':[6378137.000, 0.00669438002290],
+        'GRS80':[6378137.000, 0.00669438002290],
+        'KRASOWSKI':[6378245.000, 0.00669342162296],
+        }
+    transformacje = {
+        'XYZ2BLH': 'XYZ2BLH',
+        'BLH2XYZ': 'BLH2XYZ',
+        'PL2000':'PL2000',
+        'PL1992':'PL1992',
+        'XYZ2NEUP':'XYZ2NEUP'
+    }
+
+    argumenty = sys.argv[1:]
+    
+    
