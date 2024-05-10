@@ -208,4 +208,10 @@ if __name__ == "__main__":
                     elif trans == 'PL1992':
                         wynik.write(transformator.PL1992(fi, lam))
         
+    except FileNotFoundError:
+        raise Exception('Podany plik nie istnieje')
+    except (KeyError, IndexError, ValueError):
+        raise Exception('Format danych pliku uniemozliwia jego procesowanie')
+    
+    print('Program zakoń☻czył działanie. Wyniki znajdują się w pliku wsp_trans.txt')
         
