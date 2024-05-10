@@ -178,34 +178,34 @@ if __name__ == "__main__":
     if trans not in transformacje:
         raise Exception('Skrypt nie obsluguje podanej transformacji')
         
-        # Wczytanie pliku
-        try:
-            dane_wyjsciowe = []
-            with open(plik, 'r') as f, open('wsp_trans.txt', 'w') as wynik:
-                linie = f.readlines()
-                linie = linie[4:]
-                for index, linia in enumerate(linie): 
-                    linia = linia.strip()
-                    if trans in ['XYZ2BLH', 'BLH2XYZ', 'XYZ2NEUP']:
-                        x_str, y_str, z_str = linia.split(',')
-                        x , y, z = (float(x_str), float(y_str), float(z_str))
-                        if trans == 'XYZ2BLH':
-                            wynik.write(transformator.XYZ2BLH(x,y,z))
-                        elif trans == 'BLH2XYZ':
-                            wynik.write(transformator.BLH2XYZ(x,y,z))
-                        elif trans == 'XYZ2NEUP':
-                            if index == 0:
-                                X0 = x
-                                Y0 = y
-                                Z0 = z
-                                continue
-                            wynik.write(transformator.XYZ2NEUP(x,y,z, X0, Y0, Z0))
-                    else:
-                        fi_str, lam_str = linia.split(',')
-                        fi, lam = (float(fi_str), float(lam_str))
-                        if trans == 'PL2000':
-                            wynik.write(transformator.PL2000(fi, lam))
-                        elif trans == 'PL1992':
-                            wynik.write(transformator.PL1992(fi, lam))
+    # Wczytanie pliku
+    try:
+        dane_wyjsciowe = []
+        with open(plik, 'r') as f, open('wsp_trans.txt', 'w') as wynik:
+            linie = f.readlines()
+            linie = linie[4:]
+            for index, linia in enumerate(linie): 
+                linia = linia.strip()
+                if trans in ['XYZ2BLH', 'BLH2XYZ', 'XYZ2NEUP']:
+                    x_str, y_str, z_str = linia.split(',')
+                    x , y, z = (float(x_str), float(y_str), float(z_str))
+                    if trans == 'XYZ2BLH':
+                        wynik.write(transformator.XYZ2BLH(x,y,z))
+                    elif trans == 'BLH2XYZ':
+                        wynik.write(transformator.BLH2XYZ(x,y,z))
+                    elif trans == 'XYZ2NEUP':
+                        if index == 0:
+                            X0 = x
+                            Y0 = y
+                            Z0 = z
+                            continue
+                        wynik.write(transformator.XYZ2NEUP(x,y,z, X0, Y0, Z0))
+                else:
+                    fi_str, lam_str = linia.split(',')
+                    fi, lam = (float(fi_str), float(lam_str))
+                    if trans == 'PL2000':
+                        wynik.write(transformator.PL2000(fi, lam))
+                    elif trans == 'PL1992':
+                        wynik.write(transformator.PL1992(fi, lam))
         
         
