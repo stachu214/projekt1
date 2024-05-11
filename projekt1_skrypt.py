@@ -36,16 +36,16 @@ class Transfromacje:
 
 
     def BLH2XYZ(self,fi,lam,h):
-        N = self.Npu(fi)
-        X = (N+h)*np.cos(fi)*np.cos(lam)
-        Y = (N+h)*np.cos(fi)*np.sin(lam)
-        Z = (N*(1-self.e2)+h)*np.sin(fi)   
+        N = self.Npu(np.deg2rad(fi))
+        X = (N+h)*np.cos(np.deg2rad(fi))*np.cos(np.deg2rad(lam))
+        Y = (N+h)*np.cos(np.deg2rad(fi))*np.sin(np.deg2rad(lam))
+        Z = (N*(1-self.e2)+h)*np.sin(np.deg2rad(fi))   
         return f'{X} {Y} {Z} \n'
         
     
     def PL1992(self,fi,lama,m=0.9993):  
         lama0 = np.deg2rad(19)
-  
+        fi = np.deg2rad(fi)
         b2 = self.a**2*(1-self.e2)
         ep2 = (self.a**2-b2)/b2
         dellama = lama - lama0
@@ -67,7 +67,7 @@ class Transfromacje:
         return f'{x92} {y92} \n'
         
     def PL2000(self,fi,lama,m=0.999923):
-        
+        fi = np.deg2rad(fi)
         lama = np.deg2rad(lama)
         if lama >np.deg2rad(13.5) and lama < np.deg2rad(16.5):
             strefa = 5
@@ -96,8 +96,8 @@ class Transfromacje:
             
         sigma = self.a *(A0*fi-A2*np.sin(2*fi)+A4*np.sin(4*fi)-A6*np.sin(6*fi))
             
-        xgk =  sigma    +    ( ((dellama**2/2)*N*np.sin(fi)*np.cos(fi))    *    (1   +   ((dellama**2/12)*(np.cos(fi)**2)*(5 - t**2 + 9*ni2 + 4*ni2**2))      +         ((dellama**4/360)*(np.cos(fi)**4)*(61 - 58*t**2 + t**4 + 270*ni2 - 330*ni2*t**2))))
-        ygk =  (dellama* N * np.cos(fi))  *   ( 1 +  ((dellama**2/6)   *   (np.cos(fi)**2)   *  (1 - t**2 + ni2))     +     (((dellama**4/120)*(np.cos(fi)**4)) * (5 - (18*t**2) + t**4 + (14 * ni2) - (58*ni2*t**2))))
+        xgk =  sigma+(((dellama**2/2)*N*np.sin(fi)*np.cos(fi))*(1+((dellama**2/12)*(np.cos(fi)**2)*(5 - t**2 + 9*ni2 + 4*ni2**2))+((dellama**4/360)*(np.cos(fi)**4)*(61 - 58*t**2 + t**4 + 270*ni2 - 330*ni2*t**2))))
+        ygk =  (dellama*N*np.cos(fi))*(1+((dellama**2/6)*(np.cos(fi)**2)*(1 - t**2 + ni2))+(((dellama**4/120)*(np.cos(fi)**4)) * (5 - (18*t**2) + t**4 + (14 * ni2) - (58*ni2*t**2))))
             
         x2000 = xgk * m 
         y2000 = ygk*m + (strefa *1000000) +500000
