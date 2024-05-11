@@ -1,0 +1,9 @@
+Współrzedne geocentryczny ECEF stacji pemanentnej GNSS
+Obserwatorium Astronomiczno-Geodezyjne w Józefosławiu
+  B[°]    L[°]        
+# -----------------------------------------------------
+51.2457, 21.1122
+52.1627, 19.9341
+56.3562, 21.6356
+51.3059, 19.0335
+53.7562, 20.4890
