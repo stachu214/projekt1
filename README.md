@@ -27,7 +27,7 @@ pliku z danymi, wybór elipsoidy oraz transformacji którą wskaże użytkownik.
 ```sh
 -plik <nazwa_pliku>
 ```
-Wymaga od użytkownika wprowadzenia nazwy pliku z danymi wejściowymi. Plik powinien zostać podany ze swoim rozszerzeniem oraz znajdować się w tym samym folderze co plik z programem.
+Wymaga od użytkownika wprowadzenia ścieżki do pliku z danymi wejściowymi. Plik powinien zostać podany ze swoim rozszerzeniem.
 
 ##### FLAGA NUMER 2: 
 ```sh
@@ -61,7 +61,7 @@ projekt1_skrypt.py -plik wsp_inp.txt -elip GRS80 -trans XYZ2BLH
 Jeżeli użytkownik spełnił wszystkie powyższe wymagania t.j.: 
 - Podał wszystkie flagi 
 - Podał jedynie te elipsoidy oraz transformacje, które obsługuje program 
-- Jego plik wejściowy z danymi znajduje się w tym samym folderze oraz posiada odpowiedni format danych
+- Użytkownik podał w argumencie -plik ścieżkę do istniejącego pliku
 
 Program zakończy swoje działanie, a na konsoli pojawi się komunikat: 
 ```python
