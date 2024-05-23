@@ -55,7 +55,7 @@ UWAGA: Należy wpisywać przy użyciu wielkich liter!!
 
 ##### PRZYKŁADOWE WYWOŁANIE PROGRAMU W TERMINALU: 
 ```sh
-projekt1_skrypt.py -plik wsp_inp.txt -elip GRS80 -trans XYZ2BLH 
+python projekt1_skrypt.py -plik wsp_inp.txt -elip GRS80 -trans XYZ2BLH 
 ```
 
 Jeżeli użytkownik spełnił wszystkie powyższe wymagania t.j.: 
@@ -88,7 +88,7 @@ Obserwatorium Astronomiczno-Geodezyjne w Józefosławiu
 ```
 - Wywołanie prgramu: 
 ```sh
-projekt1_skrypt.py -plik XYZ2BLH.txt -elip GRS80 -trans XYZ2BLH
+python projekt1_skrypt.py -plik XYZ2BLH.txt -elip GRS80 -trans XYZ2BLH
 ```
 
 -WYNIK (B[°] , L[°] , H[m]) : 
@@ -117,7 +117,7 @@ Obserwatorium Astronomiczno-Geodezyjne w Józefosławiu
 ```
 - Wywołanie prgramu: 
 ```sh
-projekt1_skrypt.py -plik BLH2XYZ.txt -elip GRS80 -trans BLH2XYZ
+python projekt1_skrypt.py -plik BLH2XYZ.txt -elip GRS80 -trans BLH2XYZ
 ```
 
 -WYNIK (X[m] , Y[m] , Z[m]) : 
@@ -144,7 +144,7 @@ Obserwatorium Astronomiczno-Geodezyjne w Józefosławiu
 ```
 - Wywołanie prgramu: 
 ```sh
-projekt1.py -plik BL21992_2000.txt -elip GRS80 -trans PL2000
+python projekt1.py -plik BL21992_2000.txt -elip GRS80 -trans PL2000
 ```
 -WYNIK PL2000 (X[m] , Y[m]) : 
 ```sh
@@ -173,7 +173,7 @@ Obserwatorium Astronomiczno-Geodezyjne w Józefosławiu
 
 - Wywołanie prgramu: 
 ```sh
-projekt1.py -plik XYZ2NEUp.txt -elip GRS80 -trans XYZ2NEUP
+python projekt1.py -plik XYZ2NEUp.txt -elip GRS80 -trans XYZ2NEUP
 ```
 
 -WYNIK (X[m] , Y[m] , Z[m]) : 
