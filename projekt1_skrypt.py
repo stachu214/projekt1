@@ -46,8 +46,9 @@ class Transfromacje:
     def PL1992(self,fi,lama,m=0.9993):  
         lama0 = np.deg2rad(19)
         fi = np.deg2rad(fi)
-        b2 = self.a**2*(1-self.e2)
-        ep2 = (self.a**2-b2)/b2
+        lama = np.deg2rad(lama)
+        b2 = (self.a**2) * (1-self.e2)
+        ep2 = ((self.a**2)-b2)/b2
         dellama = lama - lama0
         t = np.tan(fi)
         ni2 = ep2*(np.cos(fi)**2)
@@ -59,7 +60,7 @@ class Transfromacje:
         A6 = (35*self.e2**3)/3072
         sigma = self.a *(A0*fi-A2*np.sin(2*fi)+A4*np.sin(4*fi)-A6*np.sin(6*fi))
 
-        xgk =  sigma    +    ( ((dellama**2/2)*N*np.sin(fi)*np.cos(fi))    *    (1   +   ((dellama**2/12)*(np.cos(fi)**2)*(5 - t**2 + 9*ni2 + 4*ni2**2))      +         ((dellama**4/360)*(np.cos(fi)**4)*(61 - 58*t**2 + t**4 + 270*ni2 - 330*ni2*t**2))))
+        xgk =  sigma + (((dellama**2)/2)*N*np.sin(fi)*np.cos(fi))*(1+((dellama**2/12)*(np.cos(fi)**2)*(5 - t**2 + 9*ni2 + 4*ni2**2))+((dellama**4/360)*(np.cos(fi)**4)*(61 - 58*t**2 + t**4 + 270*ni2 - 330*ni2*t**2)))
         ygk =  (dellama* N * np.cos(fi))  *   ( 1 +  ((dellama**2/6)   *   (np.cos(fi)**2)   *  (1 - t**2 + ni2))     +     (((dellama**4/120)*(np.cos(fi)**4)) * (5 - (18*t**2) + t**4 + (14 * ni2) - (58*ni2*t**2))))
         x92 = xgk * m - 5300000
         y92 = ygk*m + 500000
