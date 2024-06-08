@@ -38,8 +38,8 @@ Dla pomiaru przewyższenia:
 Dla pomiaru pola powierzchni: 
 "Wybrano za mało punktów do obliczenia pola powierzchni"
 - upewnić się ,że wtyczka odpala sie na pliku o nazwie agencje_zatrudnienia.sph. Wymagane jest to ponieważ program zaciąga nasza wyokość z tabeli atrybutów zawartych w tym pliku punktów:
- h_1 = float(selected_features[0]['wysokosc'])
- h_2 = float(selected_features[1]['wysokosc'])
+ - h_1 = float(selected_features[0]['wysokosc'])
+ - h_2 = float(selected_features[1]['wysokosc'])
 - Użytkownik musi zaznaczać kolejne punkty pojedyńczo przy pomocy klawisza Ctrl, nie może użyc wbudowanego narzędzia QGIS "Zaznacz obiekty prostokątem"
 - Upewnić się, że wszystkie punkty, z których użytkownik chce skorzystać, znajdują się na JEDNEJ wartswie.
 
