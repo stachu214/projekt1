@@ -9,17 +9,17 @@ Następnie przy pomocy wbudowanej funkcji "Zarządzanie wtyczkami" wyszukać, w 
 
 
 ## WYMAGANIA:
-#####Obsługiwane systemy:
--Windows 10 Home
--Windows 11
-#####Obsługiwane wersje Qgis'a:
--QGIS 3.34.4
-#####Programy do edycji wtyczki:
--python w wersji 3.11.8
--biblioteka PyQt5
--biblioteka qgis.core
--biblioteka qgis.utilis
--biblioteka qgis.PyQt
+##### Obsługiwane systemy:
+- Windows 10 Home
+- Windows 11
+##### Obsługiwane wersje Qgis'a:
+- QGIS 3.34.4
+##### Programy do edycji wtyczki:
+- python w wersji 3.11.8
+- biblioteka PyQt5
+- biblioteka qgis.core
+- biblioteka qgis.utilis
+- biblioteka qgis.PyQt
 
 ## ZASTOSOWANIE WTYCZKI:
 Wtyczka 'wtyczka_SOFG' jest wtyczką programu QGIS, posiada dwie podstawowe funkcjonalności:
@@ -29,19 +29,19 @@ Wtyczka 'wtyczka_SOFG' jest wtyczką programu QGIS, posiada dwie podstawowe funk
 ## UŻYTKOWANIE WTYCZKI:
 
 Aby wtyczka działała poprawnie należy (wytyczne):
--użytkownik musi wybrać w oknie ,Wybierz warstwę, warstwę na której znajdują sie punkty do wykonania pomiarów,
--wymagane jest od użytkownika podanie odpowiedniej ilości punktów, dostosowanej do wybranej funckcji naszej wtyczki. Gdy użytkownik nie spełni wymagań dotyczącej ilości punktów, program 
+- użytkownik musi wybrać w oknie ,Wybierz warstwę, warstwę na której znajdują sie punkty do wykonania pomiarów,
+- wymagane jest od użytkownika podanie odpowiedniej ilości punktów, dostosowanej do wybranej funckcji naszej wtyczki. Gdy użytkownik nie spełni wymagań dotyczącej ilości punktów, program 
 zwróci w dolnej części interface-u wtyczki konkretny błąd:
 Dla pomiaru przewyższenia:
 "Wybrano za mało punktów do obliczenia różnicy wysokoci"
 "Wybrano za dużo punktów do obliczenia różnicy wysokoci"
 Dla pomiaru pola powierzchni: 
 "Wybrano za mało punktów do obliczenia pola powierzchni"
--upewnić się ,że wtyczka odpala sie na pliku o nazwie agencje_zatrudnienia.sph. Wymagane jest to ponieważ program zaciąga nasza wyokość z tabeli atrybutów zawartych w tym pliku punktów:
+- upewnić się ,że wtyczka odpala sie na pliku o nazwie agencje_zatrudnienia.sph. Wymagane jest to ponieważ program zaciąga nasza wyokość z tabeli atrybutów zawartych w tym pliku punktów:
  h_1 = float(selected_features[0]['wysokosc'])
  h_2 = float(selected_features[1]['wysokosc'])
--Użytkownik musi zaznaczać kolejne punkty pojedyńczo przy pomocy klawisza Ctrl, nie może użyc wbudowanego narzędzia QGIS "Zaznacz obiekty prostokątem"
--Upewnić się, że wszystkie punkty, z których użytkownik chce skorzystać, znajdują się na JEDNEJ wartswie.
+- Użytkownik musi zaznaczać kolejne punkty pojedyńczo przy pomocy klawisza Ctrl, nie może użyc wbudowanego narzędzia QGIS "Zaznacz obiekty prostokątem"
+- Upewnić się, że wszystkie punkty, z których użytkownik chce skorzystać, znajdują się na JEDNEJ wartswie.
 
 ##### OBLICZENIE RÓŻNICY WYSOKOŚCI: 
 
